@@ -1,0 +1,17 @@
+<% if (!user) { %>
+  <h2>Пожалуйста, <a href="/auth/yandex">войдите в систему</a></h2>
+<% } else { %>
+  <h2>Профиль пользователя, <%= user.displayName %>.</h2>
+  <br>
+  <ul style="list-style-type: none; font: 16px/1.7 sans-serif;">
+    <li><b>ID</b>: <%= user.id %></li>
+    <li><b>Имя</b>: <%= user.name.familyName %></li>
+    <li><b>Фамилия</b>: <%= user.name.givenName %></li>
+    <li><b>Пол</b>: <%= (user.gender === 'male') ? 'Мужской' : 'Женский' %></li>
+    <li><b>Email</b>: <%= user.emails[0].value %></li>
+  </ul>
+  <br>
+  <div>
+    <a href="/logout" style="font: 14px/1.7 sans-serif; color: #07F;">Выйти из аккаунта</a>
+  </div>
+<% } %>

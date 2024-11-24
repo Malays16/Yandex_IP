@@ -1,0 +1,6 @@
+<% if (!user) { %>
+  <h3>Пожалуйста, <a href="/auth/yandex">войдите в систему</a></h3>
+<% } else { %>
+  <h3>Привет, <%= user.displayName %>.</h3>
+  <a href="/profile">Открыть профиль</a>
+<% } %>
